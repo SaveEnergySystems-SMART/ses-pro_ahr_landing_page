@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Save Energy Systems Pro | Contractor Reseller Program</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+    <style>
+      /* Critical Reset - Remove any zoom/scaling issues */
+      html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      }
+      
+      :root {
+        --bs-font-sans-serif:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        --brand-orange: #ff6b35;
+        --brand-dark: #333333;
+        --brand-light-grey: #f8f9fa;
+      }
+
+      body {
+        font-family: var(--bs-font-sans-serif);
+        color: var(--brand-dark);
+        background-color: #fff;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size: 16px;
+        overflow-x: hidden;
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: 700;
+        letter-spacing: -0.5px;
+      }
+
+      .text-orange {
+        color: var(--brand-orange) !important;
+      }
+
+      .bg-orange {
+        background-color: var(--brand-orange) !important;
+      }
+
+      .bg-light-grey {
+        background-color: var(--brand-light-grey);
+      }
+
+      /* Custom Components */
+      .logo-placeholder {
+        background-color: #e9ecef;
+        width: 200px;
+        max-width: 100%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: #6c757d;
+        border-radius: 4px;
+        font-size: 0.875rem;
+      }
+      
+      @media (max-width: 768px) {
+        .logo-placeholder {
+          width: 150px;
+          height: 45px;
+          font-size: 0.75rem;
+        }
+      }
+
+      .hero-section {
+        padding: 3rem 0 5rem 0;
+        background: linear-gradient(180deg, #fff 0%, #fffbf8 100%);
+        min-height: 85vh;
+        display: flex;
+        align-items: center;
+      }
+      
+      @media (max-width: 768px) {
+        .hero-section {
+          padding: 2rem 0 3rem 0;
+          min-height: auto;
+        }
+        .hero-section h1 {
+          font-size: 1.75rem !important;
+        }
+        .hero-section .lead {
+          font-size: 1rem !important;
+        }
+      }
+
+      .feature-card {
+        border: none;
+        background: #fff;
+        border-radius: 8px;
+        padding: 2rem;
+        height: 100%;
+        transition: transform 0.2s ease;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      .stat-number {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--brand-orange);
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+      
+      @media (max-width: 768px) {
+        .stat-number {
+          font-size: 1.5rem;
+        }
+      }
+
+      .stat-label {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #6c757d;
+        font-weight: 600;
+      }
+
+      .icon-circle {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: rgba(255, 107, 53, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        color: var(--brand-orange);
+        font-size: 1.75rem;
+      }
+      
+      @media (max-width: 768px) {
+        .icon-circle {
+          width: 50px;
+          height: 50px;
+          font-size: 1.5rem;
+        }
+      }
+
+      .ahr-banner {
+        background-color: var(--brand-orange);
+        color: white;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      .check-list li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.75rem;
+        list-style: none;
+      }
+
+      .check-list li::before {
+        content: '\F26A'; /* Bootstrap Icon Check */
+        font-family: 'bootstrap-icons';
+        position: absolute;
+        left: 0;
+        color: var(--brand-orange);
+        font-weight: bold;
+      }
+
+      .cta-button {
+        background-color: var(--brand-orange);
+        color: white;
+        padding: 0.75rem 2rem;
+        border-radius: 6px;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-block;
+        transition: opacity 0.2s;
+        font-size: 1rem;
+      }
+      
+      @media (max-width: 768px) {
+        .cta-button {
+          padding: 0.625rem 1.5rem;
+          font-size: 0.875rem;
+          width: 100%;
+          text-align: center;
+        }
+      }
+
+      .cta-button:hover {
+        opacity: 0.9;
+        color: white;
+      }
+
+      .truck-impact-box {
+        border-left: 5px solid var(--brand-orange);
+        background-color: #fffbf8;
+        padding: 2rem;
+      }
+
+      /* Badge Style for Targets */
+      .building-badge {
+        background-color: #fff;
+        border: 1px solid #dee2e6;
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        display: inline-block;
+        margin: 0.25rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+
+      section {
+        padding: 5rem 0;
+      }
+      
+      @media (max-width: 768px) {
+        section {
+          padding: 3rem 0;
+        }
+      }
+
+      /* Scroll Indicator */
+      .scroll-indicator {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        animation: bounce 2s infinite;
+        z-index: 10;
+      }
+
+      .scroll-indicator .scroll-text {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--brand-dark);
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .scroll-indicator .scroll-arrow {
+        font-size: 2rem;
+        color: var(--brand-orange);
+      }
+
+      @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        40% {
+          transform: translateX(-50%) translateY(-10px);
+        }
+        60% {
+          transform: translateX(-50%) translateY(-5px);
+        }
+      }
+
+      .hero-section {
+        position: relative;
+        overflow: visible;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      
+      html {
+        font-size: 16px;
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+      }
+      
+      /* Ensure proper container behavior */
+      .container {
+        max-width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      
+      @media (min-width: 576px) {
+        .container {
+          max-width: 540px;
+        }
+      }
+      
+      @media (min-width: 768px) {
+        .container {
+          max-width: 720px;
+        }
+      }
+      
+      @media (min-width: 992px) {
+        .container {
+          max-width: 960px;
+        }
+      }
+      
+      @media (min-width: 1200px) {
+        .container {
+          max-width: 1140px;
+        }
+      }
+
+      .scroll-indicator {
+        cursor: pointer;
+      }
+
+      .scroll-indicator:hover .scroll-arrow {
+        color: #e55a28;
+      }
+
+      /* Logo Carousel */
+      .logo-carousel-section {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      
+      @media (max-width: 768px) {
+        .logo-carousel-section {
+          max-width: 100%;
+          padding: 0 1rem;
+        }
+      }
+
+      .logo-carousel-wrapper {
+        overflow: hidden;
+        padding: 20px 0;
+        mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      }
+
+      .logo-carousel {
+        display: flex;
+        animation: scroll 40s linear infinite;
+        width: fit-content;
+      }
+
+      .logo-slide {
+        flex-shrink: 0;
+        padding: 0 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .logo-slide img {
+        height: 50px;
+        width: auto;
+        max-width: 150px;
+        object-fit: contain;
+        filter: grayscale(100%) opacity(0.6);
+        transition: filter 0.3s ease;
+      }
+
+      .logo-slide img:hover {
+        filter: grayscale(0%) opacity(1);
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .logo-slide {
+          padding: 0 20px;
+        }
+        .logo-slide img {
+          height: 40px;
+          max-width: 120px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 border-bottom">
+      <div class="container">
+        <div>
+          <div class="logo-placeholder">LOGO HERE</div>
+          <p class="small text-muted mb-0 mt-2"><span style="font-size: 0.875em; font-style: italic;">be smart, take control.</span></p>
+        </div>
+        <div class="ms-auto d-none d-md-block">
+          <span class="text-muted small fw-bold me-3">AHR EXPO 2026</span>
+          <span class="badge bg-orange rounded-pill px-3 py-2">BOOTH C256</span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-8 mx-auto text-center">
+            <h1 class="display-4 mb-4">Smarter HVAC. Higher Margins.<br>Less Wasted Labor.</h1>
+            <p class="lead mb-4">
+              <strong>Save Energy Systems Pro</strong> is the contractor reseller program built on the SES platform—trusted nationwide by facility managers and building owners since 2012.
+            </p>
+            <p class="text-muted mb-5">
+              Designed for retrofit projects in existing buildings, the program gives HVAC contractors a plug-and-play way to deliver smart HVAC control, predictive maintenance, and energy savings without the high upfront cost or complexity of traditional controls systems.
+            </p>
+
+            <!-- Logo Carousel -->
+<div class="logo-carousel-section mb-5">
+  <p class="small text-muted fw-bold mb-3"><strong>Trusted by over 1,000 HVAC technicians nationwide</strong></p>
+  
+  <div class="logo-carousel-wrapper">
+    <div class="logo-carousel">
+      <!-- First Set of Logos (Display 12 logos) -->
+      <div class="logo-slide"><img src="images/climatech-hvac-services.png" alt="Climatech HVAC Services"></div>
+      <div class="logo-slide"><img src="images/midwest-maintenance-mechanical.png" alt="Midwest Maintenance &amp; Mechanical"></div>
+      <div class="logo-slide"><img src="images/aeg-allied-energy-group.png" alt="AEG Allied Energy Group"></div>
+      <div class="logo-slide"><img src="images/hutchinson.png" alt="Hutchinson"></div>
+      <div class="logo-slide"><img src="images/suburban.png" alt="Suburban"></div>
+      <div class="logo-slide"><img src="images/total-comfort-group.png" alt="Total Comfort Group"></div>
+      <div class="logo-slide"><img src="images/ags-hvac-services.png" alt="AGS HVAC Services"></div>
+      <div class="logo-slide"><img src="images/joys-hvac.png" alt="Joy&#39;s HVAC"></div>
+      <div class="logo-slide"><img src="images/ritetemp-mechanical-contractors.png" alt="RiteTemp Mechanical Contractors"></div>
+      <div class="logo-slide"><img src="images/woodmart.png" alt="Woodmart"></div>
+      <div class="logo-slide"><img src="images/valley-air-conditioning-heating.png" alt="Valley Air Conditioning &amp; Heating"></div>
+      <div class="logo-slide"><img src="images/energy-one.png" alt="Energy One"></div>
+      
+      <!-- Duplicate set for seamless loop -->
+      <div class="logo-slide"><img src="images/climatech-hvac-services.png" alt="Climatech HVAC Services"></div>
+      <div class="logo-slide"><img src="images/midwest-maintenance-mechanical.png" alt="Midwest Maintenance &amp; Mechanical"></div>
+      <div class="logo-slide"><img src="images/aeg-allied-energy-group.png" alt="AEG Allied Energy Group"></div>
+      <div class="logo-slide"><img src="images/hutchinson.png" alt="Hutchinson"></div>
+      <div class="logo-slide"><img src="images/suburban.png" alt="Suburban"></div>
+      <div class="logo-slide"><img src="images/total-comfort-group.png" alt="Total Comfort Group"></div>
+    </div>
+  </div>
+</div>
+
+
+            <button type="button" class="cta-button border-0" data-bs-toggle="modal" data-bs-target="#qualifyModal">See If You Qualify for Your Free SES Kit</button>
+            <p class="mt-3 small text-muted"><br></p>
+          </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <a href="https://3000-i70hm6im42v7ppj1mvck3-583b4d74.sandbox.novita.ai/index-github-ready.html#numbers" class="scroll-indicator text-decoration-none">
+          <div class="scroll-text">See Your Revenue Potential</div>
+          <div class="scroll-arrow">
+            <i class="bi bi-chevron-down"></i>
+          </div>
+        </a>
+      </div>
+    </header>
+
+    <!-- By The Numbers (ROI) -->
+    <section id="numbers" class="bg-light-grey">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="h3 fw-bold">SES Pro By The Numbers</h2>
+          <p class="text-muted">Built for Contractor Profitability</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Install Revenue -->
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-card">
+              <div class="icon-circle">
+                <i class="bi bi-currency-dollar"></i>
+              </div>
+              <span class="stat-label">Install Revenue</span>
+              <span class="stat-number">$10K–$12K</span>
+              <p class="small text-muted mb-0">
+                Per location. High-margin labor with no specialized controls crew required.
+              </p>
+            </div>
+          </div>
+
+          <!-- Recurring Revenue -->
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-card">
+              <div class="icon-circle">
+                <i class="bi bi-arrow-repeat"></i>
+              </div>
+              <span class="stat-label">Recurring Revenue</span>
+              <span class="stat-number">$1.5K–$3K</span>
+              <p class="small text-muted mb-0">
+                Per site/year. Turn one-time installs into long-term monitoring accounts.
+              </p>
+            </div>
+          </div>
+
+          <!-- Client Energy Savings -->
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-card">
+              <div class="icon-circle">
+                <i class="bi bi-lightning-charge"></i>
+              </div>
+              <span class="stat-label">Client Savings</span>
+              <span class="stat-number">20–30%</span>
+              <p class="small text-muted mb-0">HVAC energy reduction. ~$10k annual savings for a 25k sq ft building.</p>
+            </div>
+          </div>
+
+          <!-- Labor Savings -->
+          <div class="col-md-6 col-lg-3">
+            <div class="feature-card">
+              <div class="icon-circle">
+                <i class="bi bi-clock-history"></i>
+              </div>
+              <span class="stat-label">Labor Savings</span>
+              <span class="stat-number">30-50%</span>
+              <p class="small text-muted mb-0">Fewer callbacks. More time for billable installs and planned service.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AHR Expo Callout -->
+    <section class="bg-white py-4">
+      <div class="container">
+        <div class="alert alert-warning border-warning bg-white text-center mb-0" role="alert">
+          <p class="mb-0">
+            <i class="bi bi-calendar-event text-orange me-2"></i>
+            <strong>Attending AHR Expo 2026?</strong> Stop by <strong class="text-orange">Booth C256</strong> to see SES Pro in action and qualify for your complimentary kit.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Truck Roll Impact -->
+    <section class="bg-white">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <h2 class="mb-4">The Real Cost of Callbacks</h2>
+            <div class="truck-impact-box">
+              <h3 class="h5 text-orange mb-3"><i class="bi bi-truck me-2"></i>Truck Roll Impact</h3>
+              <p class="lead mb-4"><strong>10+ unnecessary service visits</strong> avoided per site per year.</p>
+              <ul class="check-list mb-4">
+                <li>Less wasted drive time and scheduling disruption</li>
+                <li>Lower fuel and labor costs</li>
+                <li>Fewer discounted or non-billable callbacks</li>
+                <li>Higher margin per technician hour</li>
+              </ul>
+              <div class="bg-white p-3 rounded border-start border-4 border-orange">
+                <p class="mb-0 fw-bold text-orange small">
+                  <i class="bi bi-info-circle-fill me-2"></i>INDUSTRY REALITY:
+                </p>
+                <p class="mb-0 small fst-italic">
+                  Many callbacks are not billed at full rate. Reducing avoidable truck rolls improves profitability by freeing up technician time for planned, billable work.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 ps-lg-5">
+            <h3 class="h4 mb-4">Why Demand is Growing</h3>
+            <div class="d-flex mb-3">
+              <i class="bi bi-graph-up-arrow text-orange fs-4 me-3"></i>
+              <div>
+                <h5 class="h6">Regulatory Pressure</h5>
+                <p class="small text-muted">
+                  Energy performance standards are tightening across major cities through 2030.
+                </p>
+              </div>
+            </div>
+            <div class="d-flex mb-3">
+              <i class="bi bi-buildings text-orange fs-4 me-3"></i>
+              <div>
+                <h5 class="h6">Retrofit First</h5>
+                <p class="small text-muted">
+                  Owners need HVAC improvements without the capital expense of full replacement.
+                </p>
+              </div>
+            </div>
+            <div class="d-flex">
+              <i class="bi bi-trophy text-orange fs-4 me-3"></i>
+              <div>
+                <h5 class="h6">Competitive Edge</h5>
+                <p class="small text-muted">
+                  Contractors who deliver these upgrades gain new customers and larger projects.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech & Install -->
+    <section class="bg-light-grey">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-6">
+            <h3 class="mb-4"><i class="bi bi-tools text-orange me-2"></i>Installation</h3>
+            <p class="text-muted mb-3">Designed for retrofit projects in existing buildings.</p>
+            <div class="alert alert-warning bg-white border-warning mb-4" role="alert">
+              <p class="mb-2 fw-bold"><i class="bi bi-star-fill text-warning me-2"></i>Works with existing rooftop units and packaged systems</p>
+              <p class="mb-0 small"><strong>Any brand. Any age. No rip-and-replace.</strong><br>
+The wireless technology adds intelligence to rooftop units and packaged systems already in operation—without requiring rip-and-replace projects, rewiring, or proprietary controls.</p>
+            </div>
+            <ul class="check-list">
+              <li><strong>Wireless system</strong> — No rewiring required</li>
+              <li><strong>Plug-and-play retrofit</strong> — Install in hours, not days</li>
+              <li><strong>Universal compatibility</strong> — Works regardless of brand or system age</li>
+              <li>No rip-and-replace of current equipment</li>
+              <li>No specialized training needed</li>
+              <li>No proprietary lock-in or ongoing vendor dependency</li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <h3 class="mb-4"><i class="bi bi-cpu text-orange me-2"></i>Technology</h3>
+            <p class="text-muted mb-4">SES Pro is trusted nationwide by facility managers since 2012.</p>
+            
+            <div class="alert alert-info bg-white border-primary mb-4" role="alert">
+              <p class="mb-2 fw-bold"><i class="bi bi-headset text-primary me-2"></i>No Learning Curve. Full Support Included.</p>
+              <p class="mb-0 small">Most contractors avoid new platforms because of training time and complexity. <strong>SES Pro is different.</strong> We provide complete support and training—so your team can start using it immediately without disruption.</p>
+            </div>
+
+            <p class="fw-bold mb-2">Smart Features Built for Contractors:</p>
+            <ul class="check-list mb-4">
+              <li>AI-driven predictive maintenance (SmartPM™)</li>
+              <li>Remote monitoring and alerts</li>
+              <li>Review issues remotely before dispatch</li>
+              <li>Send the right technician with the correct parts</li>
+              <li>Mobile app for technicians</li>
+              <li>Voice notes, photos, and video convert to service reports automatically</li>
+              <li>Automatic call transcription and documentation</li>
+              <li>Better customer communication with complete records</li>
+            </ul>
+
+            <p class="small fst-italic text-muted">
+              <i class="bi bi-info-circle me-1"></i>The platform includes operational tools designed to help contractors work more efficiently—reducing wasted trips and improving technician productivity.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-5 pt-4 border-top">
+          <h4 class="h6 text-muted text-uppercase mb-3">Target Buildings</h4>
+          <div>
+            <span class="building-badge">Retail</span>
+            <span class="building-badge">Gyms</span>
+            <span class="building-badge">Restaurants</span>
+            <span class="building-badge">Banks</span>
+            <span class="building-badge">Offices</span>
+            <span class="building-badge">Municipal Buildings</span>
+            <span class="building-badge">Mixed-use</span>
+            <span class="building-badge">Aging Building Stock</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AHR Expo Offer -->
+    <section id="offer" class="container my-5">
+      <div class="ahr-banner p-5 text-center">
+        <h2 class="display-5 fw-bold mb-3">AHR EXPO 2026 OFFER</h2>
+        <p class="lead mb-4">Complimentary SES Kit for Qualified Contractors</p>
+        <p class="mb-4">Quick qualification based on your truck count, service area, and client portfolio</p>
+
+        <div class="row justify-content-center mb-4">
+          <div class="col-md-8">
+            <div class="bg-white text-dark p-4 rounded-3 text-start d-inline-block">
+              <p class="mb-2 fw-bold">Includes:</p>
+              <ul class="mb-0 ps-3">
+                <li>SES retrofit control system</li>
+                <li>Wireless sensors</li>
+                <li>Platform access</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center gap-3 flex-column flex-sm-row">
+          <div class="bg-white text-orange px-4 py-2 rounded-pill fw-bold">
+            <i class="bi bi-geo-alt-fill"></i> Booth C256
+          </div>
+        </div>
+        
+        <div class="mt-4">
+          <button type="button" class="btn btn-light btn-lg px-5 fw-bold text-orange" data-bs-toggle="modal" data-bs-target="#qualifyModal">
+            <i class="bi bi-clipboard-check me-2"></i>Qualify Here
+          </button>
+          <p class="mt-2 mb-0 small">Complete a quick application — takes 2 minutes</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Line Summary -->
+    <section class="bg-white py-5">
+      <div class="container text-center">
+        <h2 class="mb-5">The Bottom Line</h2>
+        <div class="row justify-content-center text-start">
+          <div class="col-md-8">
+            <div class="row g-4">
+              <div class="col-sm-6">
+                <div class="d-flex align-items-start">
+                  <i class="bi bi-check-circle-fill text-orange mt-1 me-3"></i>
+                  <p class="mb-0 fw-bold">More revenue per job</p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-start">
+                  <i class="bi bi-check-circle-fill text-orange mt-1 me-3"></i>
+                  <p class="mb-0 fw-bold">Predictable recurring income</p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-start">
+                  <i class="bi bi-check-circle-fill text-orange mt-1 me-3"></i>
+                  <p class="mb-0 fw-bold">Fewer wasted truck rolls</p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-start">
+                  <i class="bi bi-check-circle-fill text-orange mt-1 me-3"></i>
+                  <p class="mb-0 fw-bold">Stickier customer relationships</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Qualification Form Modal -->
+    <div class="modal fade" id="qualifyModal" tabindex="-1" aria-labelledby="qualifyModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <!-- Form View -->
+          <div id="formView">
+            <div class="modal-header border-0 pb-0">
+              <h4 class="modal-title fw-bold" id="qualifyModalLabel">
+                <i class="bi bi-clipboard-check text-orange me-2"></i>Qualify for Your Free SES Kit
+              </h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body px-4 py-4">
+              <p class="text-muted mb-4">Takes 2 minutes. We'll review your application and get back to you within 24 hours.</p>
+              
+              <form id="qualifyForm">
+                <!-- Company Name -->
+                <div class="mb-3">
+                  <label for="companyName" class="form-label fw-bold">Company Name <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="companyName" required="">
+                </div>
+
+                <!-- Name Fields Row -->
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="firstName" class="form-label fw-bold">First Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="firstName" required="">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="lastName" class="form-label fw-bold">Last Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="lastName" required="">
+                  </div>
+                </div>
+
+                <!-- Contact Info Row -->
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="email" class="form-label fw-bold">Email <span class="text-danger">*</span></label>
+                    <input type="email" class="form-control" id="email" required="">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="phone" class="form-label fw-bold">Phone Number <span class="text-danger">*</span></label>
+                    <input type="tel" class="form-control" id="phone" required="">
+                  </div>
+                </div>
+
+                <!-- Business Qualifiers Row -->
+                <div class="row">
+                  <div class="col-md-4 mb-3">
+                    <label for="numTrucks" class="form-label fw-bold">Number of Trucks <span class="text-danger">*</span></label>
+                    <select class="form-select" id="numTrucks" required="">
+                      <option value="">Select...</option>
+                      <option value="1-2">1-2</option>
+                      <option value="3-5">3-5</option>
+                      <option value="6-10">6-10</option>
+                      <option value="11-20">11-20</option>
+                      <option value="20+">20+</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="numClients" class="form-label fw-bold">Active Clients <span class="text-danger">*</span></label>
+                    <select class="form-select" id="numClients" required="">
+                      <option value="">Select...</option>
+                      <option value="1-25">1-25</option>
+                      <option value="26-50">26-50</option>
+                      <option value="51-100">51-100</option>
+                      <option value="101-250">101-250</option>
+                      <option value="250+">250+</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="yearsInBusiness" class="form-label fw-bold">Years in Business <span class="text-danger">*</span></label>
+                    <select class="form-select" id="yearsInBusiness" required="">
+                      <option value="">Select...</option>
+                      <option value="0-2">0-2</option>
+                      <option value="3-5">3-5</option>
+                      <option value="6-10">6-10</option>
+                      <option value="11-20">11-20</option>
+                      <option value="20+">20+</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Square Footage -->
+                <div class="mb-3">
+                  <label for="totalSqFt" class="form-label fw-bold">Total Sq Ft You Service <span class="text-danger">*</span></label>
+                  <select class="form-select" id="totalSqFt" required="">
+                    <option value="">Select range...</option>
+                    <option value="Under 100K">Under 100K sq ft</option>
+                    <option value="100K-250K">100K-250K sq ft</option>
+                    <option value="250K-500K">250K-500K sq ft</option>
+                    <option value="500K-1M">500K-1M sq ft</option>
+                    <option value="1M+">1M+ sq ft</option>
+                  </select>
+                </div>
+
+                <!-- Primary Service Area -->
+                <div class="mb-3">
+                  <label for="serviceArea" class="form-label fw-bold">Primary Service Area <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="serviceArea" placeholder="e.g., Chicago Metro, Dallas-Fort Worth" required="">
+                </div>
+
+                <!-- Annual Revenue -->
+                <div class="mb-4">
+                  <label for="annualRevenue" class="form-label fw-bold">Annual Revenue Range <span class="text-danger">*</span></label>
+                  <select class="form-select" id="annualRevenue" required="">
+                    <option value="">Select range...</option>
+                    <option value="Under 500K">Under $500K</option>
+                    <option value="500K-1M">$500K-$1M</option>
+                    <option value="1M-2.5M">$1M-$2.5M</option>
+                    <option value="2.5M-5M">$2.5M-$5M</option>
+                    <option value="5M+">$5M+</option>
+                  </select>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="d-grid">
+                  <button type="submit" class="btn btn-lg fw-bold text-white" style="background-color: var(--brand-orange);">
+                    <i class="bi bi-check-circle me-2"></i>Submit Application
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Thank You View (Hidden by default) -->
+          <div id="thankYouView" style="display: none;">
+            <div class="modal-header border-0">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center px-4 py-5">
+              <div class="mb-4">
+                <i class="bi bi-check-circle-fill text-success" style="font-size: 4rem;"></i>
+              </div>
+              <h3 class="fw-bold mb-3">Application Received!</h3>
+              <p class="lead mb-4">Thanks for applying to the SES Pro Reseller Program.</p>
+              <p class="text-muted mb-4">
+                Our team will review your information and reach out within <strong>24 hours</strong> to discuss next steps and your complimentary SES Kit.
+              </p>
+              <p class="small text-muted mb-4">
+                <i class="bi bi-info-circle me-2"></i>In the meantime, feel free to stop by <strong class="text-orange">Booth C256</strong> at AHR Expo 2026 to see SES Pro in action.
+              </p>
+              <button type="button" class="btn btn-lg fw-bold text-white" style="background-color: var(--brand-orange);" data-bs-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-4 mb-md-0">
+            <div class="logo-placeholder bg-secondary text-white mb-3" style="opacity: 0.5">LOGO</div>
+            <p class="mb-0 text-white-50">Smarter HVAC. Higher Margins. Less Wasted Labor.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <h5 class="mb-3">Ready to become a pro reseller?</h5>
+            <p class="text-white-50 mb-0">Visit Booth C256 at AHR Expo 2026</p>
+            <p class="text-white-50"><a href="https://3000-i70hm6im42v7ppj1mvck3-583b4d74.sandbox.novita.ai/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d9aab8b5bcaa99aab8afbcbcb7bcabbea0aaa0aaadbcb4aaf7bab6b4">[email&nbsp;protected]</a></p>
+          </div>
+        </div>
+        <div class="border-top border-secondary mt-4 pt-4 text-center text-white-50 small">
+          © 2026 Save Energy Systems Pro. All rights reserved.
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Handle form submission
+      document.getElementById('qualifyForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = {
+          companyName: document.getElementById('companyName').value,
+          firstName: document.getElementById('firstName').value,
+          lastName: document.getElementById('lastName').value,
+          email: document.getElementById('email').value,
+          phone: document.getElementById('phone').value,
+          numTrucks: document.getElementById('numTrucks').value,
+          numClients: document.getElementById('numClients').value,
+          yearsInBusiness: document.getElementById('yearsInBusiness').value,
+          totalSqFt: document.getElementById('totalSqFt').value,
+          serviceArea: document.getElementById('serviceArea').value,
+          annualRevenue: document.getElementById('annualRevenue').value
+        };
+        
+        // Log form data (you can replace this with actual form submission to your backend)
+        console.log('Form submitted:', formData);
+        
+        // TODO: Send form data to your backend/CRM
+        // Example: fetch('/api/qualify', { method: 'POST', body: JSON.stringify(formData) })
+        
+        // Hide form view and show thank you view
+        document.getElementById('formView').style.display = 'none';
+        document.getElementById('thankYouView').style.display = 'block';
+      });
+      
+      // Reset form when modal is closed
+      document.getElementById('qualifyModal').addEventListener('hidden.bs.modal', function () {
+        document.getElementById('formView').style.display = 'block';
+        document.getElementById('thankYouView').style.display = 'none';
+        document.getElementById('qualifyForm').reset();
+      });
+    </script>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+
+</body></html>
