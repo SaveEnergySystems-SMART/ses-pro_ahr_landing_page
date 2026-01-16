@@ -1,53 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<html lang="en" data-theme="light" style=""><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Save Energy Systems Pro | Contractor Reseller Program</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
     <style>
-      /* ========================================
-         CHROME-SPECIFIC FIXES FOR ZOOM ISSUES
-         ======================================== */
-      
-      /* Force Chrome to respect our sizing - Override accessibility zoom */
-      @supports (-webkit-appearance:none) {
-        html {
-          zoom: 1 !important;
-          -webkit-text-size-adjust: none !important;
-          text-size-adjust: none !important;
-        }
-        
-        body {
-          zoom: 1 !important;
-          transform: scale(1) !important;
-          transform-origin: 0 0 !important;
-        }
-        
-        * {
-          max-height: 999999px !important;
-          -webkit-text-size-adjust: none !important;
-          text-size-adjust: none !important;
-        }
-      }
-      
-      /* Critical Reset - Remove any zoom/scaling issues */
-      html, body {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-        -webkit-text-size-adjust: none !important;
-        -moz-text-size-adjust: none !important;
-        -ms-text-size-adjust: none !important;
-        text-size-adjust: none !important;
-        zoom: 1 !important;
-      }
-      
       :root {
         --bs-font-sans-serif:
           -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -62,17 +23,6 @@
         background-color: #fff;
         line-height: 1.6;
         -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        font-size: 16px !important;
-        overflow-x: hidden;
-        -webkit-text-size-adjust: none !important;
-        -moz-text-size-adjust: none !important;
-        -ms-text-size-adjust: none !important;
-        text-size-adjust: none !important;
-        zoom: 1 !important;
-        transform: scale(1) !important;
-        transform-origin: top left !important;
-        width: 100% !important;
       }
 
       h1,
@@ -83,16 +33,6 @@
       h6 {
         font-weight: 700;
         letter-spacing: -0.5px;
-        -webkit-text-size-adjust: none !important;
-        text-size-adjust: none !important;
-        max-height: 999999px !important;
-      }
-      
-      /* Force all text elements to respect our sizes in Chrome */
-      p, span, div, a, li, td, th, label, input, button, select, textarea {
-        -webkit-text-size-adjust: none !important;
-        text-size-adjust: none !important;
-        max-height: 999999px !important;
       }
 
       .text-orange {
@@ -111,7 +51,6 @@
       .logo-placeholder {
         background-color: #e9ecef;
         width: 200px;
-        max-width: 100%;
         height: 60px;
         display: flex;
         align-items: center;
@@ -119,36 +58,14 @@
         font-weight: bold;
         color: #6c757d;
         border-radius: 4px;
-        font-size: 0.875rem;
-      }
-      
-      @media (max-width: 768px) {
-        .logo-placeholder {
-          width: 150px;
-          height: 45px;
-          font-size: 0.75rem;
-        }
       }
 
       .hero-section {
-        padding: 3rem 0 5rem 0;
+        padding: 60px 0 100px 0;
         background: linear-gradient(180deg, #fff 0%, #fffbf8 100%);
         min-height: 85vh;
         display: flex;
         align-items: center;
-      }
-      
-      @media (max-width: 768px) {
-        .hero-section {
-          padding: 2rem 0 3rem 0;
-          min-height: auto;
-        }
-        .hero-section h1 {
-          font-size: 1.75rem !important;
-        }
-        .hero-section .lead {
-          font-size: 1rem !important;
-        }
       }
 
       .feature-card {
@@ -167,12 +84,6 @@
         color: var(--brand-orange);
         margin-bottom: 0.5rem;
         display: block;
-      }
-      
-      @media (max-width: 768px) {
-        .stat-number {
-          font-size: 1.5rem;
-        }
       }
 
       .stat-label {
@@ -194,14 +105,6 @@
         margin-bottom: 1.5rem;
         color: var(--brand-orange);
         font-size: 1.75rem;
-      }
-      
-      @media (max-width: 768px) {
-        .icon-circle {
-          width: 50px;
-          height: 50px;
-          font-size: 1.5rem;
-        }
       }
 
       .ahr-banner {
@@ -230,22 +133,12 @@
       .cta-button {
         background-color: var(--brand-orange);
         color: white;
-        padding: 0.75rem 2rem;
+        padding: 12px 36px;
         border-radius: 6px;
         font-weight: 600;
         text-decoration: none;
         display: inline-block;
         transition: opacity 0.2s;
-        font-size: 1rem;
-      }
-      
-      @media (max-width: 768px) {
-        .cta-button {
-          padding: 0.625rem 1.5rem;
-          font-size: 0.875rem;
-          width: 100%;
-          text-align: center;
-        }
       }
 
       .cta-button:hover {
@@ -272,13 +165,7 @@
       }
 
       section {
-        padding: 5rem 0;
-      }
-      
-      @media (max-width: 768px) {
-        section {
-          padding: 3rem 0;
-        }
+        padding: 80px 0;
       }
 
       /* Scroll Indicator */
@@ -323,48 +210,9 @@
         overflow: visible;
       }
 
-      * {
-        box-sizing: border-box;
-      }
-      
+      /* Smooth Scrolling */
       html {
-        font-size: 16px;
         scroll-behavior: smooth;
-        -webkit-text-size-adjust: 100%;
-        -moz-text-size-adjust: 100%;
-        -ms-text-size-adjust: 100%;
-        text-size-adjust: 100%;
-      }
-      
-      /* Ensure proper container behavior */
-      .container {
-        max-width: 100%;
-        padding-left: 1rem;
-        padding-right: 1rem;
-      }
-      
-      @media (min-width: 576px) {
-        .container {
-          max-width: 540px;
-        }
-      }
-      
-      @media (min-width: 768px) {
-        .container {
-          max-width: 720px;
-        }
-      }
-      
-      @media (min-width: 992px) {
-        .container {
-          max-width: 960px;
-        }
-      }
-      
-      @media (min-width: 1200px) {
-        .container {
-          max-width: 1140px;
-        }
       }
 
       .scroll-indicator {
@@ -379,13 +227,6 @@
       .logo-carousel-section {
         max-width: 900px;
         margin: 0 auto;
-      }
-      
-      @media (max-width: 768px) {
-        .logo-carousel-section {
-          max-width: 100%;
-          padding: 0 1rem;
-        }
       }
 
       .logo-carousel-wrapper {
@@ -442,7 +283,7 @@
       }
     </style>
   </head>
-  <body>
+  <body style="">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 border-bottom">
       <div class="container">
@@ -478,21 +319,21 @@
     <div class="logo-carousel">
       <!-- First Set of Logos (Display 12 logos) -->
       <div class="logo-slide"><img src="images/climatech-hvac-services.png" alt="Climatech HVAC Services"></div>
-      <div class="logo-slide"><img src="images/midwest-maintenance-mechanical.png" alt="Midwest Maintenance &amp; Mechanical"></div>
+      <div class="logo-slide"><img src="images/midwest-maintenance-mechanical.png" alt="Midwest Maintenance & Mechanical"></div>
       <div class="logo-slide"><img src="images/aeg-allied-energy-group.png" alt="AEG Allied Energy Group"></div>
       <div class="logo-slide"><img src="images/hutchinson.png" alt="Hutchinson"></div>
       <div class="logo-slide"><img src="images/suburban.png" alt="Suburban"></div>
       <div class="logo-slide"><img src="images/total-comfort-group.png" alt="Total Comfort Group"></div>
       <div class="logo-slide"><img src="images/ags-hvac-services.png" alt="AGS HVAC Services"></div>
-      <div class="logo-slide"><img src="images/joys-hvac.png" alt="Joy&#39;s HVAC"></div>
+      <div class="logo-slide"><img src="images/joys-hvac.png" alt="Joy's HVAC"></div>
       <div class="logo-slide"><img src="images/ritetemp-mechanical-contractors.png" alt="RiteTemp Mechanical Contractors"></div>
       <div class="logo-slide"><img src="images/woodmart.png" alt="Woodmart"></div>
-      <div class="logo-slide"><img src="images/valley-air-conditioning-heating.png" alt="Valley Air Conditioning &amp; Heating"></div>
+      <div class="logo-slide"><img src="images/valley-air-conditioning-heating.png" alt="Valley Air Conditioning & Heating"></div>
       <div class="logo-slide"><img src="images/energy-one.png" alt="Energy One"></div>
       
       <!-- Duplicate set for seamless loop -->
       <div class="logo-slide"><img src="images/climatech-hvac-services.png" alt="Climatech HVAC Services"></div>
-      <div class="logo-slide"><img src="images/midwest-maintenance-mechanical.png" alt="Midwest Maintenance &amp; Mechanical"></div>
+      <div class="logo-slide"><img src="images/midwest-maintenance-mechanical.png" alt="Midwest Maintenance & Mechanical"></div>
       <div class="logo-slide"><img src="images/aeg-allied-energy-group.png" alt="AEG Allied Energy Group"></div>
       <div class="logo-slide"><img src="images/hutchinson.png" alt="Hutchinson"></div>
       <div class="logo-slide"><img src="images/suburban.png" alt="Suburban"></div>
@@ -508,7 +349,7 @@
         </div>
         
         <!-- Scroll Indicator -->
-        <a href="https://3000-i70hm6im42v7ppj1mvck3-583b4d74.sandbox.novita.ai/index-github-ready.html#numbers" class="scroll-indicator text-decoration-none">
+        <a href="#numbers" class="scroll-indicator text-decoration-none">
           <div class="scroll-text">See Your Revenue Potential</div>
           <div class="scroll-arrow">
             <i class="bi bi-chevron-down"></i>
@@ -950,7 +791,7 @@ The wireless technology adds intelligence to rooftop units and packaged systems 
           <div class="col-md-6 text-md-end">
             <h5 class="mb-3">Ready to become a pro reseller?</h5>
             <p class="text-white-50 mb-0">Visit Booth C256 at AHR Expo 2026</p>
-            <p class="text-white-50"><a href="https://3000-i70hm6im42v7ppj1mvck3-583b4d74.sandbox.novita.ai/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d9aab8b5bcaa99aab8afbcbcb7bcabbea0aaa0aaadbcb4aaf7bab6b4">[email&nbsp;protected]</a></p>
+            <p class="text-white-50"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d9aab8b5bcaa99aab8afbcbcb7bcabbea0aaa0aaadbcb4aaf7bab6b4">[email&#160;protected]</a></p>
           </div>
         </div>
         <div class="border-top border-secondary mt-4 pt-4 text-center text-white-50 small">
@@ -958,7 +799,7 @@ The wireless technology adds intelligence to rooftop units and packaged systems 
         </div>
       </div>
     </footer>
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
       // Handle form submission
       document.getElementById('qualifyForm').addEventListener('submit', function(e) {
         e.preventDefault();
@@ -999,45 +840,6 @@ The wireless technology adds intelligence to rooftop units and packaged systems 
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Chrome-Only Scaling Fix - Makes content 50% smaller (200% reduction total) -->
-    <script>
-      (function() {
-        // Detect if browser is Chrome (not Edge, not Firefox, not Safari)
-        const isChrome = /Chrome/.test(navigator.userAgent) && 
-                        /Google Inc/.test(navigator.vendor) &&
-                        !/Edg/.test(navigator.userAgent);
-        
-        if (!isChrome) {
-          console.log('Not Chrome browser - no scaling adjustment applied');
-          return; // Exit if not Chrome
-        }
-        
-        // Chrome-specific: Apply 50% zoom reduction (makes everything half size)
-        // This is IN ADDITION to any DPR compensation
-        const chromeReduction = 0.5; // 50% of original size = 200% reduction
-        
-        // Apply the reduction
-        document.body.style.zoom = chromeReduction;
-        document.documentElement.style.fontSize = (16 * chromeReduction) + 'px';
-        
-        console.log('Chrome-only scaling applied:', {
-          browser: 'Chrome',
-          zoom: chromeReduction,
-          baseFontSize: (16 * chromeReduction) + 'px',
-          message: 'Content reduced to 50% of original size'
-        });
-        
-        // Listen for window resize
-        let resizeTimer;
-        window.addEventListener('resize', function() {
-          clearTimeout(resizeTimer);
-          resizeTimer = setTimeout(function() {
-            location.reload(); // Reload to reapply fix
-          }, 1000);
-        });
-      })();
-    </script>
   
 
 </body></html>
